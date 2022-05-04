@@ -10,4 +10,6 @@ Cinema.prototype.filterByGenre = function (givenGenre) {return this.films.filter
 
 Cinema.prototype.moviesReleasedOnYear = function (givenYear) {return this.films.filter(film => film.year === givenYear).length === 0 ? false : true}
 
+Cinema.prototype.allMoviesOverLength = function (givenLength) {return this.films.length === this.films.filter(film => film.length === givenLength) ? true : false}
+
 module.exports = Cinema;

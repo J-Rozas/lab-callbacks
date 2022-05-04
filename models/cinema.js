@@ -13,6 +13,6 @@ Cinema.prototype.allMoviesOverLength = function (givenLength) {return this.films
 // First map to get all the lengths, then reduce
 Cinema.prototype.totalRunningTime = function () {return this.films.map(film => film.length).reduce((previousValue, currentValue) => previousValue += currentValue, 0)}
 
-Cinema.prototype.filterByProperty = (givenProperty, givenValue) => this.films.filter(film => film[givenProperty] === givenValue)
+Cinema.prototype.filterByProperty = function (givenProperty, givenValue) {return this.films.filter(film => film[givenProperty] === givenValue)} 
 
 module.exports = Cinema;

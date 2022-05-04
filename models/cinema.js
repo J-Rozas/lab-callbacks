@@ -12,4 +12,7 @@ Cinema.prototype.moviesReleasedOnYear = function (givenYear) {return this.films.
 
 Cinema.prototype.allMoviesOverLength = function (givenLength) {return this.films.length === this.films.filter(film => film.length === givenLength) ? true : false}
 
+// First map to get all the lengths, then reduce
+Cinema.prototype.totalRunningTime = function () {return this.films.map(film => film.length).reduce((previousValue, currentValue) => previousValue += currentValue, 0)}
+
 module.exports = Cinema;
